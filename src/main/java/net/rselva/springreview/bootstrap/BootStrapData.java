@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+
 @Component
 public class BootStrapData implements CommandLineRunner {
 
@@ -56,8 +58,13 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("No of publishers="+publisherRepository.count());
 
-        publisherRepository.findAll()
-                .forEach(publisher -> publisher.getBooks().forEach(book -> System.out.println(book.getTitle())));
+        Iterable<Publisher> publishers = publisherRepository.findAll();
 
+        for(Publisher publisher: publishers){
+            Set<Book> books = publisher.getBooks();
+//            for (Book book : books) {
+//                System.out.println(book.getTitle());
+//            }
+        }
     }
 }

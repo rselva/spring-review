@@ -110,8 +110,7 @@ public class Publisher {
                 ", address='" + address + '\'' +
                 ", street='" + street + '\'' +
                 ", city='" + city + '\'' +
-                ", zip='" + zip + '\'' +
-                ", books=" + books +
+                ", zip='" + zip +
                 '}';
     }
 }
